@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <rect width="900" height="1100" fill="#E7E4DC"/>
+  <rect x="1" y="1" width="898" height="1098" fill="none" stroke="#C9C5BA" stroke-width="2"/>
+  <line x1="0" y1="0" x2="900" y2="1100" stroke="#C9C5BA" stroke-width="1"/>
+  <line x1="900" y1="0" x2="0" y2="1100" stroke="#C9C5BA" stroke-width="1"/>
+  <text x="450.0" y="550.0" font-family="Arial, sans-serif" font-size="50" fill="#6B6F6D" text-anchor="middle" dominant-baseline="middle">Story of Liloan — photo (replace)</text>
+</svg>

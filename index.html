@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Page title: assignment requirement <title> -->
+<title>Liloan, Southern Leyte — My Hometown</title>
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================= HEADER / NAV ============================= -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark" title="Back to homepage">LILOAN SOUTHERN LEYTE</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Bookmarks: in-page anchors on the home page itself -->
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" aria-current="page" title="Home" target="_self">Home</a>
+      <a href="map.html#tourist-spots" title="See the tourist spots on the map">Spots</a>
+      <a href="about.html" title="About Liloan">About</a>
+      <button class="btn btn-primary btn-sm" onclick="location.href='map.html'">Explore Liloan</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================= HERO ============================= -->
+<!-- Hero photo is a placeholder. Replace assets/images/hero/hero-municipal-hall.svg
+     with the real photograph; keep the same filename or update the src below. -->
+<section class="hero" style="padding:0;">
+  <picture>
+    <source media="(max-width: 680px)" srcset="assets/images/hero/hero-municipal-hall.svg">
+    <img src="assets/images/hero/hero-municipal-hall.svg"
+         alt="Placeholder hero photograph — to be replaced with a view of Liloan featuring the Municipal Hall"
+         width="1600" height="1000">
+  </picture>
+  <div class="hero-copy">
+    <h1>LILOAN<br>SOUTHERN LEYTE</h1>
+    <p class="hero-hall-note">A first look at the town — full photo, camera pan, and a highlight on the Municipal Hall will animate in here once the real photograph is supplied.</p>
+  </div>
+</section>
+
+<!-- ============================= DISCOVER LILOAN ============================= -->
+<section id="discover">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Discover Liloan</h2>
+      <p>Three sides of the same town — <em>tap through</em> each set of photos at your own pace.</p>
+    </div>
+
+    <div class="discover-grid">
+
+      <!-- Beaches gallery -->
+      <div class="gallery" data-gallery data-autoplay="4200">
+        <div class="gallery-frame">
+          <img src="assets/images/discover/beaches/beach-1.svg" alt="Beaches in Liloan — photo 1" width="1200" height="1500" class="is-active">
+          <img src="assets/images/discover/beaches/beach-2.svg" alt="Beaches in Liloan — photo 2" width="1200" height="1500">
+          <img src="assets/images/discover/beaches/beach-3.svg" alt="Beaches in Liloan — photo 3" width="1200" height="1500">
+          <img src="assets/images/discover/beaches/beach-4.svg" alt="Beaches in Liloan — photo 4" width="1200" height="1500">
+          <img src="assets/images/discover/beaches/beach-5.svg" alt="Beaches in Liloan — photo 5" width="1200" height="1500">
+        </div>
+        <div class="gallery-dots" data-dots></div>
+        <h3>Beaches</h3>
+        <p>Shoreline stretches around the town, from quiet coves to the main baywalk.</p>
+      </div>
+
+      <!-- Landscapes gallery -->
+      <div class="gallery" data-gallery data-autoplay="4800">
+        <div class="gallery-frame">
+          <img src="assets/images/discover/landscapes/landscape-1.svg" alt="Landscapes in Liloan — photo 1" width="1200" height="1500" class="is-active">
+          <img src="assets/images/discover/landscapes/landscape-2.svg" alt="Landscapes in Liloan — photo 2" width="1200" height="1500">
+          <img src="assets/images/discover/landscapes/landscape-3.svg" alt="Landscapes in Liloan — photo 3" width="1200" height="1500">
+          <img src="assets/images/discover/landscapes/landscape-4.svg" alt="Landscapes in Liloan — photo 4" width="1200" height="1500">
+          <img src="assets/images/discover/landscapes/landscape-5.svg" alt="Landscapes in Liloan — photo 5" width="1200" height="1500">
+        </div>
+        <div class="gallery-dots" data-dots></div>
+        <h3>Landscapes</h3>
+        <p>Hills and open country just inland, including the rise toward Fatima Hills.</p>
+      </div>
+
+      <!-- Local Places gallery -->
+      <div class="gallery" data-gallery data-autoplay="5300">
+        <div class="gallery-frame">
+          <img src="assets/images/discover/local/local-1.svg" alt="Local places in Liloan — photo 1" width="1200" height="1500" class="is-active">
+          <img src="assets/images/discover/local/local-2.svg" alt="Local places in Liloan — photo 2" width="1200" height="1500">
+          <img src="assets/images/discover/local/local-3.svg" alt="Local places in Liloan — photo 3" width="1200" height="1500">
+          <img src="assets/images/discover/local/local-4.svg" alt="Local places in Liloan — photo 4" width="1200" height="1500">
+          <img src="assets/images/discover/local/local-5.svg" alt="Local places in Liloan — photo 5" width="1200" height="1500">
+        </div>
+        <div class="gallery-dots" data-dots></div>
+        <h3>Local Places</h3>
+        <p>Streets, chapels, and everyday corners that make the town feel lived-in.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= THE STORY OF LILOAN ============================= -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div>
+      <h2>The Story of Liloan</h2>
+      <p><b>History</b> — placeholder text. The real background of the town, its founding and its name, will be summarized here once supplied and will replace this paragraph without changing any of the facts provided.</p>
+      <p>Locally, residents still refer to the town by an older <i>pet name</i> in everyday conversation — <q>the version everyone actually uses</q> — a detail that will be filled in with the correct term later.</p>
+    </div>
+    <div class="story-photo">
+      <img src="assets/images/story/story-photo.svg" alt="Placeholder photograph to accompany the history of Liloan" width="900" height="1100">
+    </div>
+  </div>
+</section>
+
+<!-- ============================= EXPERIENCE LILOAN ============================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience Liloan</h2>
+      <p>What a visit actually feels like, in two parts. Hover an image to look closer.</p>
+    </div>
+    <div class="experience-grid">
+
+      <div class="experience-card">
+        <div class="experience-frame" data-gallery data-autoplay="3600">
+          <img src="assets/images/experience/lilowawa-1.svg" alt="Lilowawa experience — photo 1" width="1000" height="750" class="is-active">
+          <img src="assets/images/experience/lilowawa-2.svg" alt="Lilowawa experience — photo 2" width="1000" height="750">
+          <!-- Animated GIF placeholder, required by the assignment -->
+          <img src="assets/images/experience/wave-loop-placeholder.gif" alt="Animated placeholder — replace with a real motion clip or GIF of Lilowawa" width="600" height="400">
+        </div>
+        <h3>Lilowawa</h3>
+        <p>Body text placeholder — describe the local dish/tradition tied to the town's name here.</p>
+      </div>
+
+      <div class="experience-card">
+        <div class="experience-frame" data-gallery data-autoplay="4100">
+          <img src="assets/images/experience/livelihood-1.svg" alt="Livelihood in Liloan — photo 1" width="1000" height="750" class="is-active">
+          <img src="assets/images/experience/livelihood-2.svg" alt="Livelihood in Liloan — photo 2" width="1000" height="750">
+        </div>
+        <h3>Livelihood</h3>
+        <p>Body text placeholder — fishing, farming, and trade that shape daily life here.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= VOICES OF LILOAN ============================= -->
+<section id="voices">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Voices of Liloan</h2>
+      <p>Editorial statements, not testimonials — themes the town is often described by.</p>
+    </div>
+    <div class="voices-grid">
+
+      <div class="voice-card">
+        <blockquote>Home is the shoreline you can still recognize with your eyes closed.</blockquote>
+        <div class="voice-meta">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>Home</strong><span>A recurring theme</span></div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <blockquote>What holds the town together isn't the map — it's the people who keep showing up for each other.</blockquote>
+        <div class="voice-meta">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>Community</strong><span>A recurring theme</span></div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <blockquote>Small towns rarely get remembered on their own terms. Liloan is worth remembering on its own.</blockquote>
+        <div class="voice-meta">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>Pride</strong><span>A recurring theme</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FINAL CTA ============================= -->
+<section class="cta">
+  <div class="wrap cta">
+    <h2>Come Discover Liloan</h2>
+    <div class="cta-actions">
+      <button class="btn btn-primary" onclick="location.href='map.html'">Explore Map</button>
+      <button class="btn btn-secondary" onclick="location.href='about.html'">Learn About Liloan</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>LILOAN SOUTHERN LEYTE</h4>
+        <address>
+          Liloan, Southern Leyte<br>
+          Philippines
+        </address>
+        <p class="flag-credit">
+          <!-- Image-as-link + absolute image URL, both assignment requirements -->
+          <a href="https://en.wikipedia.org/wiki/Philippines" target="_blank" title="About the Philippines">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of the Philippines" width="16" height="11">
+          </a>
+          <small>Republic of the Philippines</small>
+        </p>
+      </div>
+      <div>
+        <h4>Home</h4>
+        <ul>
+          <li><a href="index.html#discover">Discover</a></li>
+          <li><a href="index.html#story">Story of Liloan</a></li>
+          <li><a href="index.html#experience">Experience Liloan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Spots</h4>
+        <ul>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="map.html#tourist-spots">Tourist Spots</a></li>
+          <li><a href="map.html#must-visit">More Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html#details">Details</a></li>
+          <li><a href="about.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; 2026 Liloan, Southern Leyte. Student project — not an official municipal website.</small>
+      <div class="social-row">
+        <a href="https://facebook.com" target="_blank" title="Facebook (placeholder link)">f</a>
+        <a href="https://instagram.com" target="_blank" title="Instagram (placeholder link)">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', function () {
+    var open = mainNav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  // Independent crossfade galleries: each [data-gallery] cycles its own <img> set
+  // and, if it has .gallery-dots, builds click-to-jump dots. Each instance keeps
+  // its own state, so Beaches/Landscapes/Local Places never share a timer.
+  document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+    var images = gallery.querySelectorAll('img');
+    var dotsWrap = gallery.parentElement.querySelector('[data-dots]');
+    var index = 0;
+
+    if (dotsWrap) {
+      images.forEach(function (img, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Show photo ' + (i + 1));
+        if (i === 0) dot.classList.add('is-active');
+        dot.addEventListener('click', function () { show(i); });
+        dotsWrap.appendChild(dot);
+      });
+    }
+
+    function show(i) {
+      images[index].classList.remove('is-active');
+      if (dotsWrap) dotsWrap.children[index].classList.remove('is-active');
+      index = i;
+      images[index].classList.add('is-active');
+      if (dotsWrap) dotsWrap.children[index].classList.add('is-active');
+    }
+
+    var delay = parseInt(gallery.getAttribute('data-autoplay'), 10) || 4000;
+    setInterval(function () { show((index + 1) % images.length); }, delay);
+  });
+</script>
+</body>
+</html>

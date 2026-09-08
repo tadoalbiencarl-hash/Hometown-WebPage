@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
+  <rect width="1400" height="1000" fill="#E7E4DC"/>
+  <rect x="1" y="1" width="1398" height="998" fill="none" stroke="#C9C5BA" stroke-width="2"/>
+  <line x1="0" y1="0" x2="1400" y2="1000" stroke="#C9C5BA" stroke-width="1"/>
+  <line x1="1400" y1="0" x2="0" y2="1000" stroke="#C9C5BA" stroke-width="1"/>
+  <text x="700.0" y="500.0" font-family="Arial, sans-serif" font-size="55" fill="#6B6F6D" text-anchor="middle" dominant-baseline="middle">Hometown Map — base image (replace)</text>
+</svg>

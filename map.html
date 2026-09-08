@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map — Liloan, Southern Leyte</title>
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark" title="Back to homepage">LILOAN SOUTHERN LEYTE</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" title="Home">Home</a>
+      <a href="map.html" aria-current="page" title="Spots">Spots</a>
+      <a href="about.html" title="About Liloan">About</a>
+      <button class="btn btn-primary btn-sm" onclick="location.href='map.html#hometown-map'">Explore Liloan</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================= PAGE INTRO ============================= -->
+<section class="page-hero">
+  <div class="wrap">
+    <h1>This Is the Map</h1>
+    <p>Hover a marker on the hometown map below and its name appears; click it to jump straight to that spot's details further down the page.</p>
+  </div>
+</section>
+
+<!-- ============================= INTERACTIVE HOMETOWN IMAGE MAP ============================= -->
+<!--
+  The base map image below is a placeholder. Once the annotated hometown map is
+  supplied, replace assets/images/map/hometown-map.svg and update the rect / circle /
+  poly coordinates in the <map> element to match the real artwork. Coordinates here
+  are illustrative only.
+-->
+<section id="hometown-map">
+  <div class="wrap">
+    <div class="section-head text-center" style="margin: 0 auto 32px;">
+      <h2>Interactive Hometown Map</h2>
+    </div>
+
+    <div class="map-figure">
+      <img src="assets/images/map/hometown-map.svg" usemap="#liloan-map"
+           alt="Hometown map of Liloan with five marked tourist spots"
+           width="1400" height="1000">
+
+      <map name="liloan-map">
+        <!-- rect: two spots -->
+        <area shape="rect" coords="90,700,360,900" href="#spot-baywalk"
+              alt="Liloan Baywalk" title="Liloan Baywalk" data-name="Liloan Baywalk">
+        <area shape="rect" coords="430,760,680,940" href="#spot-molopolo"
+              alt="Molopolo Beach Resort" title="Molopolo Beach Resort" data-name="Molopolo Beach Resort">
+
+        <!-- poly: one spot -->
+        <area shape="poly" coords="880,120,1040,110,1130,250,980,330,830,230" href="#spot-fatima-hills"
+              alt="Fatima Hills" title="Fatima Hills" data-name="Fatima Hills">
+
+        <!-- circle: two spots -->
+        <area shape="circle" coords="1150,620,70" href="#spot-tagbak"
+              alt="Tagbak Marine Park" title="Tagbak Marine Park" data-name="Tagbak Marine Park">
+        <area shape="circle" coords="1300,790,60" href="#spot-punta-rossette"
+              alt="Punta Rossette Park" title="Punta Rossette Park" data-name="Punta Rossette Park">
+      </map>
+    </div>
+    <p class="map-hint">Markers are placeholders until the real map artwork and coordinates are supplied.</p>
+  </div>
+</section>
+
+<!-- ============================= TOURIST SPOTS (bookmarked from the map) ============================= -->
+<section id="tourist-spots">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>5 Primary Tourist Spots</h2>
+      <p>Each spot below corresponds to one marker on the map above.</p>
+    </div>
+
+    <div class="spot-row" id="spot-baywalk">
+      <div>
+        <h3>1. Liloan Baywalk</h3>
+        <p>Body text placeholder — a short description of the baywalk goes here once supplied.</p>
+        <div class="spot-actions">
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Liloan+Baywalk+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
+          <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
+        </div>
+        <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
+      </div>
+      <div class="spot-photo">
+        <img src="assets/images/map/spot-baywalk.svg" alt="Liloan Baywalk — placeholder photo" width="1000" height="750">
+      </div>
+    </div>
+
+    <div class="spot-row" id="spot-molopolo">
+      <div class="spot-photo">
+        <img src="assets/images/map/spot-molopolo.svg" alt="Molopolo Beach Resort — placeholder photo" width="1000" height="750">
+      </div>
+      <div>
+        <h3>2. Molopolo Beach Resort</h3>
+        <p>Body text placeholder — a short description of the resort goes here once supplied.</p>
+        <div class="spot-actions">
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Molopolo+Beach+Resort+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
+          <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
+        </div>
+        <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
+      </div>
+    </div>
+
+    <div class="spot-row" id="spot-fatima-hills">
+      <div>
+        <h3>3. Fatima Hills</h3>
+        <p>Body text placeholder — a short description of Fatima Hills goes here once supplied.</p>
+        <div class="spot-actions">
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Fatima+Hills+Liloan+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
+          <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
+        </div>
+        <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
+      </div>
+      <div class="spot-photo">
+        <img src="assets/images/map/spot-fatima-hills.svg" alt="Fatima Hills — placeholder photo" width="1000" height="750">
+      </div>
+    </div>
+
+    <div class="spot-row" id="spot-tagbak">
+      <div class="spot-photo">
+        <img src="assets/images/map/spot-tagbak.svg" alt="Tagbak Marine Park — placeholder photo" width="1000" height="750">
+      </div>
+      <div>
+        <h3>4. Tagbak Marine Park</h3>
+        <p>Body text placeholder — home to seagrass beds that quietly pull CO<sub>2</sub> out of the water, among the details to be filled in once supplied.</p>
+        <div class="spot-actions">
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Tagbak+Marine+Park+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
+          <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
+        </div>
+        <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
+      </div>
+    </div>
+
+    <div class="spot-row" id="spot-punta-rossette">
+      <div>
+        <h3>5. Punta Rossette Park</h3>
+        <p>Body text placeholder — a short description of Punta Rossette Park goes here once supplied.</p>
+        <div class="spot-actions">
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Punta+Rossette+Park+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
+          <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
+        </div>
+        <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
+      </div>
+      <div class="spot-photo">
+        <img src="assets/images/map/spot-punta-rossette.svg" alt="Punta Rossette Park — placeholder photo" width="1000" height="750">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= MORE MUST-VISIT PLACES ============================= -->
+<section id="must-visit">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>More Must-Visit Places</h2>
+      <p>Separate from the five map markers above — additional spots worth a stop.</p>
+    </div>
+
+    <div class="must-visit-grid">
+      <div class="must-visit-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg>
+        <div>
+          <h3>Crescent Beach Resort</h3>
+          <p>Body text placeholder — details to follow once supplied.</p>
+        </div>
+      </div>
+      <div class="must-visit-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <div>
+          <h3>Paraiso Beach Resort</h3>
+          <p>Body text placeholder — details to follow once supplied.</p>
+        </div>
+      </div>
+      <div class="must-visit-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><rect x="6" y="4" width="4" height="16"/><path d="M6 8h4M2 20h18"/></svg>
+        <div>
+          <h3>Caligangan Lighthouse</h3>
+          <p>Body text placeholder — details to follow once supplied.</p>
+        </div>
+      </div>
+      <div class="must-visit-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><path d="M2 18c2-3 5-3 7 0s5 3 7 0s5-3 6 0"/><circle cx="17" cy="7" r="3"/></svg>
+        <div>
+          <h3>Bitoon White Sand Beach</h3>
+          <p>Body text placeholder — details to follow once supplied.</p>
+        </div>
+      </div>
+      <div class="must-visit-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><path d="M12 3v6M9 6h6M6 21V11l6-4l6 4v10"/></svg>
+        <div>
+          <h3>The Holy Cross of Mt. Carmel Chapel</h3>
+          <p>Body text placeholder — details to follow once supplied.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>LILOAN SOUTHERN LEYTE</h4>
+        <address>Liloan, Southern Leyte<br>Philippines</address>
+      </div>
+      <div>
+        <h4>Home</h4>
+        <ul>
+          <li><a href="index.html#discover">Discover</a></li>
+          <li><a href="index.html#story">Story of Liloan</a></li>
+          <li><a href="index.html#experience">Experience Liloan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Spots</h4>
+        <ul>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="map.html#tourist-spots">Tourist Spots</a></li>
+          <li><a href="map.html#must-visit">More Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html#details">Details</a></li>
+          <li><a href="about.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; 2026 Liloan, Southern Leyte. Student project — not an official municipal website.</small>
+      <div class="social-row">
+        <a href="https://facebook.com" target="_blank" title="Facebook (placeholder link)">f</a>
+        <a href="https://instagram.com" target="_blank" title="Instagram (placeholder link)">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', function () {
+    var open = mainNav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  // "View Details" buttons expand a short extra paragraph in place.
+  document.querySelectorAll('[data-toggle-more]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var more = btn.closest('.spot-actions').nextElementSibling;
+      more.hidden = !more.hidden;
+      btn.textContent = more.hidden ? 'View Details' : 'Hide Details';
+    });
+  });
+
+  // Small hover tooltip so touching a marker shows the spot's name near the cursor.
+  var tip = document.createElement('div');
+  tip.className = 'map-tip';
+  document.body.appendChild(tip);
+
+  document.querySelectorAll('#liloan-map area').forEach(function (area) {
+    area.addEventListener('mouseenter', function () {
+      tip.textContent = area.getAttribute('data-name');
+      tip.classList.add('is-visible');
+    });
+    area.addEventListener('mousemove', function (e) {
+      tip.style.left = e.clientX + 'px';
+      tip.style.top = e.clientY + 'px';
+    });
+    area.addEventListener('mouseleave', function () {
+      tip.classList.remove('is-visible');
+    });
+  });
+</script>
+</body>
+</html>

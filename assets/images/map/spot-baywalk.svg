@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="750" viewBox="0 0 1000 750">
+  <rect width="1000" height="750" fill="#EDEDEB"/>
+  <rect x="1" y="1" width="998" height="748" fill="none" stroke="#D6D3CC" stroke-width="2"/>
+  <line x1="0" y1="0" x2="1000" y2="750" stroke="#D6D3CC" stroke-width="1"/>
+  <line x1="1000" y1="0" x2="0" y2="750" stroke="#D6D3CC" stroke-width="1"/>
+  <text x="500.0" y="375.0" font-family="Arial, sans-serif" font-size="46" fill="#5A5A58" text-anchor="middle" dominant-baseline="middle">Liloan Baywalk (replace)</text>
+</svg>

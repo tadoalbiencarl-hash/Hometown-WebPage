@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#E7E4DC"/>
+  <rect x="1" y="1" width="1598" height="998" fill="none" stroke="#C9C5BA" stroke-width="2"/>
+  <line x1="0" y1="0" x2="1600" y2="1000" stroke="#C9C5BA" stroke-width="1"/>
+  <line x1="1600" y1="0" x2="0" y2="1000" stroke="#C9C5BA" stroke-width="1"/>
+  <text x="800.0" y="500.0" font-family="Arial, sans-serif" font-size="55" fill="#6B6F6D" text-anchor="middle" dominant-baseline="middle">HERO — Liloan Municipal Hall (replace)</text>
+</svg>

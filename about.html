@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Liloan, Southern Leyte</title>
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark" title="Back to homepage">LILOAN SOUTHERN LEYTE</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" title="Home">Home</a>
+      <a href="map.html" title="Spots">Spots</a>
+      <a href="about.html" aria-current="page" title="About Liloan">About</a>
+      <button class="btn btn-primary btn-sm" onclick="location.href='map.html'">Explore Liloan</button>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>About Liloan</h1>
+    <p>Municipality information, officials, population, and how to get in touch.</p>
+  </div>
+</section>
+
+<!-- ============================= DETAILS ============================= -->
+<section id="details">
+  <div class="wrap about-intro">
+    <div>
+      <h2>Details</h2>
+
+      <div class="about-choice">
+        <h3>Municipal Officials</h3>
+        <p>The current set of elected officials for the municipality.</p>
+        <button class="btn btn-secondary btn-sm" data-panel-btn="officials">View Details</button>
+      </div>
+
+      <div class="about-choice">
+        <h3>Population</h3>
+        <p>Total population figure from the most recent census.</p>
+        <button class="btn btn-secondary btn-sm" data-panel-btn="population">View Details</button>
+      </div>
+
+      <div class="about-choice">
+        <h3><a href="#contact" title="Jump to contact section">Contact us</a></h3>
+        <p>Reach the municipal office directly.</p>
+      </div>
+    </div>
+
+    <!-- Municipal logo/photo placeholder — do not treat as final artwork -->
+    <div class="about-photo">
+      <img src="assets/images/about/municipal-logo.svg" alt="Placeholder for the official municipal logo or a photograph of the Municipal Hall" width="400" height="400">
+    </div>
+  </div>
+
+  <!-- ---- Municipal Officials panel ---- -->
+  <div class="wrap detail-panel is-visible" id="panel-officials">
+    <hr class="divider" style="margin-top:0;">
+    <h2>Elected Officials</h2>
+    <div class="officials-grid">
+      <div>
+        <div class="official">
+          <strong>Jonna C. Adan</strong>
+          <span>Mayor</span>
+        </div>
+        <div class="official">
+          <strong>Shirlita Y. Chong</strong>
+          <span>Vice-Mayor</span>
+        </div>
+      </div>
+      <div>
+        <h3><abbr title="Sangguniang Bayan">SB</abbr> Members</h3>
+        <ul class="sb-list">
+          <li>Welfredo S. Chua</li>
+          <li>Joseph T. Lim</li>
+          <li>Alex C. Lim</li>
+          <li>Victor L. Chua Jr.</li>
+          <li>Mary Ann B. Aranzado</li>
+          <li>Rodolfo C. Cuares</li>
+          <li>Gabriel Angelo P. Maamo</li>
+          <li>Restituto E. Handayan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- Population panel ---- -->
+  <div class="wrap detail-panel" id="panel-population">
+    <hr class="divider" style="margin-top:0;">
+    <h2>Population</h2>
+    <table class="population-table">
+      <thead>
+        <tr><th>Figure</th><th>Value</th><th>Reference Year</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><del>Total residents</del> <ins>Total population</ins></td>
+          <td><strong>24,800</strong><sup>1</sup></td>
+          <td><mark>2020 Census</mark></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><small>1. Barangay-level breakdown to be added once supplied. Source: <cite>Philippine Statistics Authority</cite>.</small></p>
+  </div>
+</section>
+
+<!-- ============================= CONTACT US ============================= -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div>
+        <address>
+          Municipal Hall<br>
+          Liloan, Southern Leyte<br>
+          Philippines<br><br>
+          Phone: (placeholder)<br>
+          Email: (placeholder)<br>
+          Contact person: (placeholder)
+        </address>
+
+        <pre class="office-hours">Office Hours (placeholder)
+Mon–Fri   8:00 AM – 5:00 PM
+Sat–Sun   Closed</pre>
+
+        <p class="bdo-demo">
+          <bdo dir="ltr">Liloan — written left to right</bdo>
+          <bdo dir="rtl">Liloan — written right to left</bdo>
+        </p>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Write your message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>LILOAN SOUTHERN LEYTE</h4>
+        <address>Liloan, Southern Leyte<br>Philippines</address>
+      </div>
+      <div>
+        <h4>Home</h4>
+        <ul>
+          <li><a href="index.html#discover">Discover</a></li>
+          <li><a href="index.html#story">Story of Liloan</a></li>
+          <li><a href="index.html#experience">Experience Liloan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Spots</h4>
+        <ul>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="map.html#tourist-spots">Tourist Spots</a></li>
+          <li><a href="map.html#must-visit">More Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html#details">Details</a></li>
+          <li><a href="about.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; 2026 Liloan, Southern Leyte. Student project — not an official municipal website.</small>
+      <div class="social-row">
+        <a href="https://facebook.com" target="_blank" title="Facebook (placeholder link)">f</a>
+        <a href="https://instagram.com" target="_blank" title="Instagram (placeholder link)">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', function () {
+    var open = mainNav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  // Municipal Officials / Population buttons swap which panel is visible.
+  var panels = {
+    officials: document.getElementById('panel-officials'),
+    population: document.getElementById('panel-population')
+  };
+  document.querySelectorAll('[data-panel-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = btn.getAttribute('data-panel-btn');
+      Object.keys(panels).forEach(function (key) {
+        panels[key].classList.toggle('is-visible', key === target);
+      });
+      panels[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>

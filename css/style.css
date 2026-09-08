@@ -1,0 +1,453 @@
+/* ==========================================================================
+   LILOAN, SOUTHERN LEYTE — shared stylesheet
+   One file used by index.html, map.html and about.html.
+   ========================================================================== */
+
+/* ---- Design tokens ------------------------------------------------------ */
+:root {
+  --ink: #111111;        /* primary text / black buttons */
+  --ink-soft: #3a3a3a;    /* secondary headings on dark */
+  --muted: #6e6e6e;       /* body copy on light */
+  --paper: #ffffff;       /* page background */
+  --panel: #f4f4f2;       /* soft light panel background */
+  --line: #e4e2dd;        /* hairline borders/dividers */
+  --dark: #0e0e0e;        /* footer / dark sections */
+  --dark-line: #2a2a2a;   /* borders on dark sections */
+
+  --font: -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --container: 1180px;
+  --gap: 24px;
+  --radius: 2px;
+}
+
+/* ---- Reset --------------------------------------------------------------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font-family: inherit; cursor: pointer; }
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Typography ----------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.02; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.05rem; }
+p { margin: 0 0 1em; color: var(--muted); }
+p:last-child { margin-bottom: 0; }
+.eyebrow { font-size: 0.8rem; color: var(--muted); margin: 0 0 6px; }
+
+/* ---- Buttons --------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--ink);
+  background: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+.btn:hover { opacity: 0.75; }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-secondary { background: var(--panel); color: var(--ink); border-color: var(--line); }
+.btn-outline { background: transparent; color: var(--paper); border-color: var(--paper); }
+.btn-sm { padding: 9px 16px; font-size: 0.82rem; }
+
+/* ---- Header / nav ----------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.wordmark {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.main-nav { display: flex; align-items: center; gap: 32px; }
+.main-nav a { font-size: 0.9rem; }
+.main-nav a[aria-current="page"] { border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
+.nav-toggle {
+  display: none;
+  border: none;
+  background: none;
+  padding: 6px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px 0;
+}
+
+/* ---- Hero (Home) ------------------------------------------------------------- */
+.hero {
+  position: relative;
+  height: 86vh;
+  min-height: 460px;
+  overflow: hidden;
+  background: #d8d5cc;
+}
+.hero picture, .hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: hero-pan 18s ease-in-out infinite alternate;
+}
+@keyframes hero-pan {
+  from { transform: scale(1.04) translate(0, 0); }
+  to   { transform: scale(1.12) translate(-1.5%, -1%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero img { animation: none; }
+}
+.hero-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 48px;
+  padding: 0 24px;
+}
+.hero-copy h1 {
+  color: #111;
+  text-shadow: 0 2px 24px rgba(255, 255, 255, 0.35);
+}
+.hero-hall-note {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+/* ---- Section spacing --------------------------------------------------------- */
+section { padding: 96px 0; }
+section + section { border-top: 1px solid var(--line); }
+.section-head { margin-bottom: 48px; max-width: 640px; }
+
+/* ---- Discover Liloan (independent galleries) ---------------------------------- */
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--panel);
+}
+.gallery-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.gallery-frame img.is-active { opacity: 1; }
+.gallery-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+.gallery-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--line);
+  padding: 0;
+}
+.gallery-dots button.is-active { background: var(--ink); }
+.gallery h3 { margin-top: 16px; }
+.gallery p { margin-top: 4px; font-size: 0.92rem; }
+
+/* ---- Story of Liloan ------------------------------------------------------------ */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.story-photo { aspect-ratio: 4 / 5; overflow: hidden; background: var(--panel); }
+.story-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---- Experience Liloan (crossfade + hover zoom) --------------------------------- */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+.experience-card { display: flex; flex-direction: column; }
+.experience-frame {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: var(--panel);
+}
+.experience-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 0.5s ease;
+}
+.experience-frame img.is-active { opacity: 1; }
+.experience-frame:hover img.is-active { transform: scale(1.06); }
+.experience-card h3 { margin-top: 16px; }
+.experience-card p { margin-top: 4px; font-size: 0.92rem; }
+
+/* ---- Voices of Liloan -------------------------------------------------------------- */
+.voices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.voice-card {
+  padding: 28px;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.voice-card blockquote { margin: 0; font-size: 1.1rem; }
+.voice-meta { display: flex; align-items: center; gap: 10px; }
+.voice-meta .dot {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--ink); flex-shrink: 0;
+}
+.voice-meta strong { display: block; font-size: 0.85rem; }
+.voice-meta span { font-size: 0.78rem; color: var(--muted); }
+
+/* ---- Final CTA -------------------------------------------------------------------- */
+.cta {
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cta-actions { display: flex; gap: 12px; }
+
+/* ---- Footer ------------------------------------------------------------------------ */
+.site-footer {
+  background: var(--dark);
+  color: #cfcfcf;
+  padding: 64px 0 28px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--dark-line);
+}
+.footer-top h4 { color: #fff; font-size: 0.85rem; margin-bottom: 16px; }
+.footer-top ul li { margin-bottom: 10px; }
+.footer-top a { color: #b3b3b3; font-size: 0.9rem; }
+.footer-top a:hover { color: #fff; }
+.footer-brand address { font-style: normal; color: #9c9c9c; font-size: 0.85rem; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.social-row { display: flex; gap: 14px; }
+.social-row a {
+  width: 30px; height: 30px;
+  border: 1px solid var(--dark-line);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.flag-credit { display: inline-flex; align-items: center; gap: 6px; }
+.flag-credit img { width: 16px; height: auto; border: 1px solid var(--dark-line); }
+
+/* ---- Page hero banner (Map / About) -------------------------------------------------- */
+.page-hero {
+  position: relative;
+  padding: 120px 0 64px;
+  background: var(--dark);
+  color: #fff;
+}
+.page-hero p { color: #b8b8b8; max-width: 560px; }
+
+/* ---- Interactive hometown image map ---------------------------------------------------- */
+.map-figure {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--panel);
+}
+.map-figure img { width: 100%; height: auto; }
+.map-figure area { cursor: pointer; }
+.map-tip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  transform: translate(-50%, -130%);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 60;
+  white-space: nowrap;
+}
+.map-tip.is-visible { opacity: 1; }
+.map-hint { text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 16px; }
+
+/* ---- Tourist spot list (alternating rows) ------------------------------------------------ */
+.spot-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 0;
+}
+.spot-row:not(:first-child) { border-top: 1px solid var(--line); }
+.spot-row:nth-child(even) .spot-photo { order: 2; }
+.spot-photo { aspect-ratio: 4 / 3; overflow: hidden; background: var(--panel); }
+.spot-photo img { width: 100%; height: 100%; object-fit: cover; }
+.spot-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+/* ---- Must-visit list (icon rows) -------------------------------------------------------- */
+.must-visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+}
+.must-visit-item { display: flex; gap: 16px; }
+.must-visit-item svg { flex-shrink: 0; margin-top: 4px; }
+.must-visit-item h3 { margin-bottom: 6px; }
+
+/* ---- About page ---------------------------------------------------------------------------- */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+.about-choice { padding: 28px 0; border-top: 1px solid var(--line); }
+.about-choice:last-of-type { border-bottom: 1px solid var(--line); }
+.about-choice h3 { margin-bottom: 6px; }
+.about-choice p { margin-bottom: 16px; }
+.about-photo { aspect-ratio: 3 / 4; overflow: hidden; background: var(--panel); }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.detail-panel {
+  margin-top: 64px;
+  padding-top: 64px;
+  border-top: 1px solid var(--line);
+  display: none;
+}
+.detail-panel.is-visible { display: block; }
+
+.officials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.official { margin-bottom: 20px; }
+.official strong { display: block; }
+.official span { font-size: 0.82rem; color: var(--muted); }
+.sb-list li { margin-bottom: 8px; }
+
+table.population-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+.population-table th, .population-table td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+.population-table th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.contact-form { display: grid; gap: 14px; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.contact-form label { font-size: 0.82rem; color: var(--muted); display: block; margin-bottom: 4px; }
+pre.office-hours {
+  background: var(--panel);
+  padding: 16px;
+  font-size: 0.85rem;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  overflow-x: auto;
+}
+.bdo-demo { font-size: 0.78rem; color: var(--muted); display: flex; gap: 18px; margin-top: 10px; }
+
+/* ---- Utility --------------------------------------------------------------------------------- */
+hr.divider { border: none; border-top: 1px solid var(--line); margin: 64px 0 0; }
+.text-center { text-align: center; }
+
+/* ---- Responsive ------------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .discover-grid, .voices-grid { grid-template-columns: 1fr 1fr; }
+  .story-grid, .experience-grid, .about-intro, .contact-grid, .officials-grid, .must-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .spot-row { grid-template-columns: 1fr; }
+  .spot-row:nth-child(even) .spot-photo { order: 0; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .main-nav { position: fixed; inset: 72px 0 0 0; background: var(--paper); flex-direction: column; align-items: flex-start; padding: 24px; gap: 20px; transform: translateX(100%); transition: transform 0.25s ease; }
+  .main-nav.is-open { transform: translateX(0); }
+  .nav-toggle { display: block; }
+  .discover-grid, .voices-grid { grid-template-columns: 1fr; }
+  section { padding: 64px 0; }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .cta { flex-direction: column; align-items: flex-start; }
+}
