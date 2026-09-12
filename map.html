@@ -34,10 +34,10 @@
 
 <!-- ============================= INTERACTIVE HOMETOWN IMAGE MAP ============================= -->
 <!--
-  The base map image below is a placeholder. Once the annotated hometown map is
-  supplied, replace assets/images/map/hometown-map.svg and update the rect / circle /
-  poly coordinates in the <map> element to match the real artwork. Coordinates here
-  are illustrative only.
+  Coordinates below are measured against this image's own native pixel size
+  (assets/images/map/hometown_map.jpg, 1024×796). If this file is ever
+  replaced with a differently-sized image, these coords must be rescaled
+  proportionally — they do not carry over automatically between image sizes.
 -->
 <section id="hometown-map">
   <div class="wrap">
@@ -46,29 +46,47 @@
     </div>
 
     <div class="map-figure">
-      <img src="assets/images/map/hometown-map.svg" usemap="#liloan-map"
+      <img src="assets/images/map/hometown_map.jpg" usemap="#liloan-map"
            alt="Hometown map of Liloan with five marked tourist spots"
-           width="1400" height="1000">
+           width="1024" height="796">
+
+      <!-- Decorative pin markers — purely visual, clicks pass through (pointer-events:none)
+           to the invisible <area> hotspots on the image itself, which do the real work.
+           Percentage positions are resolution-independent, so these did not need to change. -->
+      <span class="map-pin" style="left:37.97%; top:44.79%;" aria-hidden="true"></span>
+      <span class="map-pin" style="left:42.75%; top:28.07%;" aria-hidden="true"></span>
+      <span class="map-pin" style="left:40.92%; top:45.61%;" aria-hidden="true"></span>
+      <span class="map-pin" style="left:39.25%; top:37.83%;" aria-hidden="true"></span>
+      <span class="map-pin" style="left:79.78%; top:75.99%;" aria-hidden="true"></span>
 
       <map name="liloan-map">
-        <!-- rect: two spots -->
-        <area shape="rect" coords="90,700,360,900" href="#spot-baywalk"
-              alt="Liloan Baywalk" title="Liloan Baywalk" data-name="Liloan Baywalk">
-        <area shape="rect" coords="430,760,680,940" href="#spot-molopolo"
-              alt="Molopolo Beach Resort" title="Molopolo Beach Resort" data-name="Molopolo Beach Resort">
+        <!-- rect: Liloan Baywalk -->
+        <area shape="rect" coords="369,339,409,374" href="#spot-baywalk"
+              alt="Liloan Baywalk" title="Liloan Baywalk" data-name="Liloan Baywalk"
+              data-photo="assets/images/map/baywalk.jpg">
 
-        <!-- poly: one spot -->
-        <area shape="poly" coords="880,120,1040,110,1130,250,980,330,830,230" href="#spot-fatima-hills"
-              alt="Fatima Hills" title="Fatima Hills" data-name="Fatima Hills">
+        <!-- circle: Molopolo Beach Resort -->
+        <area shape="circle" coords="438,223,14" href="#spot-molopolo"
+              alt="Molopolo Beach Resort" title="Molopolo Beach Resort" data-name="Molopolo Beach Resort"
+              data-photo="assets/images/map/molopolo.jpg">
 
-        <!-- circle: two spots -->
-        <area shape="circle" coords="1150,620,70" href="#spot-tagbak"
-              alt="Tagbak Marine Park" title="Tagbak Marine Park" data-name="Tagbak Marine Park">
-        <area shape="circle" coords="1300,790,60" href="#spot-punta-rossette"
-              alt="Punta Rossette Park" title="Punta Rossette Park" data-name="Punta Rossette Park">
+        <!-- poly: Fatima Hills -->
+        <area shape="poly" coords="402,381,403,363,406,354,412,347,432,343,436,351,436,371,410,382,405,383" href="#spot-fatima-hills"
+              alt="Fatima Hills" title="Fatima Hills" data-name="Fatima Hills"
+              data-photo="assets/images/map/fatima_hills.jpg">
+
+        <!-- circle: Tagbak Marine Park -->
+        <area shape="circle" coords="402,301,12" href="#spot-tagbak"
+              alt="Tagbak Marine Park" title="Tagbak Marine Park" data-name="Tagbak Marine Park"
+              data-photo="assets/images/map/tagbak_marine_park.jpg">
+
+        <!-- circle: Punta Rossette Park -->
+        <area shape="circle" coords="817,605,19" href="#spot-punta-rossette"
+              alt="Punta Rossette Park" title="Punta Rossette Park" data-name="Punta Rossette Park"
+              data-photo="assets/images/map/punta_rossette_park.jpg">
       </map>
     </div>
-    <p class="map-hint">Markers are placeholders until the real map artwork and coordinates are supplied.</p>
+    <p class="map-hint">Hover a pin to see the spot's name and photo. Click it to jump to the full details below.</p>
   </div>
 </section>
 
@@ -83,7 +101,7 @@
     <div class="spot-row" id="spot-baywalk">
       <div>
         <h3>1. Liloan Baywalk</h3>
-        <p>Body text placeholder — a short description of the baywalk goes here once supplied.</p>
+        <p>Sits right along the Poblacion shoreline, next to the AH26 coastal highway — the natural gathering spot along the water, a short walk from the town center.</p>
         <div class="spot-actions">
           <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Liloan+Baywalk+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
           <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
@@ -91,17 +109,17 @@
         <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
       </div>
       <div class="spot-photo">
-        <img src="assets/images/map/spot-baywalk.svg" alt="Liloan Baywalk — placeholder photo" width="1000" height="750">
+        <img src="assets/images/map/baywalk.jpg" alt="Liloan Baywalk" width="1000" height="750">
       </div>
     </div>
 
     <div class="spot-row" id="spot-molopolo">
       <div class="spot-photo">
-        <img src="assets/images/map/spot-molopolo.svg" alt="Molopolo Beach Resort — placeholder photo" width="1000" height="750">
+        <img src="assets/images/map/molopolo.jpg" alt="Molopolo Beach Resort" width="1000" height="750">
       </div>
       <div>
         <h3>2. Molopolo Beach Resort</h3>
-        <p>Body text placeholder — a short description of the resort goes here once supplied.</p>
+        <p>Up the coast near Barangay Molopolo, on the Himayangan boundary — a short drive north along the coastal road from Poblacion.</p>
         <div class="spot-actions">
           <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Molopolo+Beach+Resort+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
           <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
@@ -113,7 +131,7 @@
     <div class="spot-row" id="spot-fatima-hills">
       <div>
         <h3>3. Fatima Hills</h3>
-        <p>Body text placeholder — a short description of Fatima Hills goes here once supplied.</p>
+        <p>Rises just behind Poblacion, close enough to the town center to reach on foot or a short tricycle ride.</p>
         <div class="spot-actions">
           <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Fatima+Hills+Liloan+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
           <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
@@ -121,17 +139,17 @@
         <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
       </div>
       <div class="spot-photo">
-        <img src="assets/images/map/spot-fatima-hills.svg" alt="Fatima Hills — placeholder photo" width="1000" height="750">
+        <img src="assets/images/map/fatima_hills.jpg" alt="Fatima Hills" width="1000" height="750">
       </div>
     </div>
 
     <div class="spot-row" id="spot-tagbak">
       <div class="spot-photo">
-        <img src="assets/images/map/spot-tagbak.svg" alt="Tagbak Marine Park — placeholder photo" width="1000" height="750">
+        <img src="assets/images/map/tagbak_marine_park.jpg" alt="Tagbak Marine Park" width="1000" height="750">
       </div>
       <div>
         <h3>4. Tagbak Marine Park</h3>
-        <p>Body text placeholder — home to seagrass beds that quietly pull CO<sub>2</sub> out of the water, among the details to be filled in once supplied.</p>
+        <p>A protected stretch of water off the Poblacion coastline, between the town center and Molopolo — home to seagrass beds that quietly pull CO<sub>2</sub> out of the water.</p>
         <div class="spot-actions">
           <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Tagbak+Marine+Park+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
           <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
@@ -143,7 +161,7 @@
     <div class="spot-row" id="spot-punta-rossette">
       <div>
         <h3>5. Punta Rossette Park</h3>
-        <p>Body text placeholder — a short description of Punta Rossette Park goes here once supplied.</p>
+        <p>Tucked into the coastline near Barangay Catig, on the eastern side of town facing Cabalian Bay.</p>
         <div class="spot-actions">
           <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Punta+Rossette+Park+Southern+Leyte" target="_blank" title="View on Google Maps (opens a new tab)">View on Google Maps</a>
           <button class="btn btn-secondary btn-sm" data-toggle-more>View Details</button>
@@ -151,7 +169,7 @@
         <p class="more-details" hidden>Additional description placeholder — more photos and details will go here.</p>
       </div>
       <div class="spot-photo">
-        <img src="assets/images/map/spot-punta-rossette.svg" alt="Punta Rossette Park — placeholder photo" width="1000" height="750">
+        <img src="assets/images/map/punta_rossette_park.jpg" alt="Punta Rossette Park" width="1000" height="750">
       </div>
     </div>
   </div>
@@ -264,14 +282,17 @@
     });
   });
 
-  // Small hover tooltip so touching a marker shows the spot's name near the cursor.
+  // Hover tooltip: touching a marker floats its name AND a small photo near the cursor.
   var tip = document.createElement('div');
   tip.className = 'map-tip';
   document.body.appendChild(tip);
 
   document.querySelectorAll('#liloan-map area').forEach(function (area) {
     area.addEventListener('mouseenter', function () {
-      tip.textContent = area.getAttribute('data-name');
+      var name = area.getAttribute('data-name');
+      var photo = area.getAttribute('data-photo');
+      tip.innerHTML = '<img src="' + photo + '" alt="" width="40" height="30">' +
+                       '<span>' + name + '</span>';
       tip.classList.add('is-visible');
     });
     area.addEventListener('mousemove', function (e) {
