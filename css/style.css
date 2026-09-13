@@ -318,21 +318,79 @@ section + section { border-top: 1px solid var(--line); }
 }
 .map-figure img { width: 100%; height: auto; }
 .map-figure area { cursor: pointer; }
+
+/* Black location-pin icon (teardrop with a white center dot),
+   drawn as an inline SVG data-URI so no extra image file is
+   needed. Anchored so the TIP of the pin sits exactly on the
+   left/top percentage coordinate set inline on each pin in map.html. */
+.map-pin {
+  position: absolute;
+  width: 22px;
+  height: 30px;
+  transform: translate(-50%, -100%);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><path d='M12 0C5.4 0 0 5.4 0 12c0 8.5 12 20 12 20s12-11.5 12-20C24 5.4 18.6 0 12 0z' fill='%23111111'/><circle cx='12' cy='12' r='4.5' fill='%23ffffff'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none; /* clicks/hover pass through to the real <area> hotspot */
+  transition: transform 0.15s ease;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25));
+}
+/* Pin "lifts" slightly while its matching <area> is hovered. */
+.map-pin.is-active {
+  transform: translate(-50%, -100%) scale(1.2);
+}
+
+/* Floating hover card: follows the cursor, shows the spot's
+   photo with its name printed directly on the image (bottom
+   caption bar) instead of a plain text bubble. */
 .map-tip {
   position: fixed;
+  left: 0;
+  top: 0;
   pointer-events: none;
-  background: var(--ink);
-  color: #fff;
-  font-size: 0.78rem;
-  padding: 6px 10px;
-  border-radius: var(--radius);
-  transform: translate(-50%, -130%);
+  transform: translate(-50%, -130%) scale(0.96);
   opacity: 0;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, transform 0.15s ease;
   z-index: 60;
-  white-space: nowrap;
 }
-.map-tip.is-visible { opacity: 1; }
+.map-tip.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -140%) scale(1);
+}
+.map-tip-photo {
+  position: relative;
+  width: 180px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+}
+.map-tip-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.map-tip-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 10px;
+  background: rgba(17, 17, 17, 0.82);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+/* No real "hover" on touch devices — hide the card there so it
+   doesn't get stuck on screen after a tap. */
+@media (hover: none) {
+  .map-tip { display: none; }
+}
+
 .map-hint { text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 16px; }
 
 /* ---- Tourist spot list (alternating rows) ------------------------------------------------ */
