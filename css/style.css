@@ -417,15 +417,116 @@ section + section { border-top: 1px solid var(--line); }
 .spot-photo img { width: 100%; height: 100%; object-fit: cover; }
 .spot-actions { display: flex; gap: 10px; margin-top: 20px; }
 
-/* ---- Must-visit list (icon rows) -------------------------------------------------------- */
-.must-visit-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 48px;
+/* ---- Must-visit waveform showcase -----------------------------------------------------
+   Center-alignment technique: .wave-track is a flex row with align-items:center, so every
+   .wave-item shares the same horizontal centerline automatically regardless of its own
+   height — flexbox centers each child on the cross-axis independently of the others.
+   Changing --wave-h (height) never moves that shared center. The idle "breathing" motion
+   and the hover/focus/tap expansion both use `transform`, which never affects layout, so
+   they can never shift the centerline either — only scale visually around it. */
+.waveform { padding: 8px 0 4px; }
+.wave-track {
+  display: flex;
+  align-items: center;         /* <- the shared centerline */
+  justify-content: center;
+  gap: 14px;
+  height: 340px;
+  padding: 0 4px;
 }
-.must-visit-item { display: flex; gap: 16px; }
-.must-visit-item svg { flex-shrink: 0; margin-top: 4px; }
-.must-visit-item h3 { margin-bottom: 6px; }
+.wave-item {
+  position: relative;
+  flex: 0 1 17%;
+  min-width: 70px;
+  height: calc(var(--wave-h, 0.6) * 100%);
+  border: none;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--panel);
+  transform: scaleY(1);
+  transform-origin: center;    /* grows/shrinks around its own center, never the bottom */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: flex-basis 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s ease;
+  animation: wave-breathe 7s ease-in-out infinite;
+  animation-delay: var(--wave-delay, 0s);
+}
+.wave-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Idle "living waveform" motion — purely visual (transform), centerline never moves. */
+@keyframes wave-breathe {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(1.07); }
+}
+
+/* Hover / keyboard focus / tap: the target item widens and its own animation pauses
+   so the interactive state reads clearly; the rest of the row recedes slightly. */
+.wave-track.has-active .wave-item {
+  animation-play-state: paused;
+  transform: scaleY(0.92);
+  opacity: 0.55;
+}
+.wave-item.is-active {
+  flex-basis: 40%;
+  transform: scaleY(1.05) !important;
+  opacity: 1 !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+}
+
+/* Details panel — overlaid on the photo, not a separate block, so the image stays the
+   main visual focus. Fades/moves in only for the active item. */
+.wave-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 16px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0));
+  color: #fff;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+.wave-item.is-active .wave-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+.wave-caption strong { font-size: 0.95rem; line-height: 1.25; }
+.wave-caption .wave-desc { font-size: 0.78rem; color: #e6e6e3; line-height: 1.4; }
+.wave-caption .wave-location { font-size: 0.75rem; color: #cfcfca; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-item { animation: none; }
+}
+
+@media (max-width: 960px) {
+  .wave-track { height: 260px; gap: 10px; }
+  .wave-item.is-active { flex-basis: 55%; }
+}
+@media (max-width: 680px) {
+  .wave-track {
+    height: 220px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scroll-snap-type: x proximity;
+    padding: 0 12px;
+  }
+  .wave-item { flex: 0 0 30%; min-width: 90px; scroll-snap-align: center; }
+  .wave-item.is-active { flex: 0 0 62%; }
+  .wave-caption strong { font-size: 0.85rem; }
+  .wave-caption .wave-desc { display: none; } /* keep the mobile card compact */
+}
 
 /* ---- About page ---------------------------------------------------------------------------- */
 .about-intro {
@@ -503,7 +604,7 @@ hr.divider { border: none; border-top: 1px solid var(--line); margin: 64px 0 0; 
 /* ---- Responsive ------------------------------------------------------------------------------- */
 @media (max-width: 960px) {
   .discover-grid, .voices-grid { grid-template-columns: 1fr 1fr; }
-  .story-grid, .experience-grid, .about-intro, .contact-grid, .officials-grid, .must-visit-grid {
+  .story-grid, .experience-grid, .about-intro, .contact-grid, .officials-grid {
     grid-template-columns: 1fr;
   }
   .spot-row { grid-template-columns: 1fr; }

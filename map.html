@@ -180,53 +180,113 @@ image's coordinate space.
 </div>
 </section>
 
-<!-- ============================= MORE MUST-VISIT PLACES ============================= -->
+<!-- ============================= MORE MUST-VISIT PLACES (waveform showcase) ============================= -->
+<!--
+  All content for this section lives in the MUST_VISIT_SPOTS array in the
+  <script> right after this section — edit name / description / location /
+  image there, nothing else needs to change.
+-->
 <section id="must-visit">
 <div class="wrap">
 <div class="section-head">
 <h2>More Must-Visit Places</h2>
-<p>Separate from the five map markers above — additional spots worth a stop.</p>
+<p>Separate from the five map markers above — additional spots worth a stop. Hover or tap a photo to explore.</p>
 </div>
 
-<div class="must-visit-grid">
-<div class="must-visit-item">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg>
-<div>
-<h3>Crescent Beach Resort</h3>
-<p>Body text placeholder — details to follow once supplied.</p>
-</div>
-</div>
-<div class="must-visit-item">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
-<div>
-<h3>Paraiso Beach Resort</h3>
-<p>Body text placeholder — details to follow once supplied.</p>
-</div>
-</div>
-<div class="must-visit-item">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><rect x="6" y="4" width="4" height="16"/><path d="M6 8h4M2 20h18"/></svg>
-<div>
-<h3>Caligangan Lighthouse</h3>
-<p>Body text placeholder — details to follow once supplied.</p>
-</div>
-</div>
-<div class="must-visit-item">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><path d="M2 18c2-3 5-3 7 0s5 3 7 0s5-3 6 0"/><circle cx="17" cy="7" r="3"/></svg>
-<div>
-<h3>Bitoon White Sand Beach</h3>
-<p>Body text placeholder — details to follow once supplied.</p>
-</div>
-</div>
-<div class="must-visit-item">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.4"><path d="M12 3v6M9 6h6M6 21V11l6-4l6 4v10"/></svg>
-<div>
-<h3>The Holy Cross of Mt. Carmel Chapel</h3>
-<p>Body text placeholder — details to follow once supplied.</p>
-</div>
-</div>
+<div class="waveform" id="mustVisitWaveform">
+<div class="wave-track" id="waveTrack"><!-- items injected by JS from MUST_VISIT_SPOTS --></div>
 </div>
 </div>
 </section>
+
+<script>
+(function () {
+  var MUST_VISIT_SPOTS = [
+    {
+      name: "Crescent Beach Resort",
+      description: "Body text placeholder — details to follow once supplied.",
+      location: "Liloan, Southern Leyte",
+      image: "assets/images/map/Crescent_Beache_Resort.jpg",
+      h: 0.46
+    },
+    {
+      name: "Paraiso Beach Resort",
+      description: "Body text placeholder — details to follow once supplied.",
+      location: "Liloan, Southern Leyte",
+      image: "assets/images/map/Paraiso_Beach_Resort.jpg",
+      h: 0.88
+    },
+    {
+      name: "Caligangan Lighthouse",
+      description: "Body text placeholder — details to follow once supplied.",
+      location: "Liloan, Southern Leyte",
+      image: "assets/images/map/Caligangan_Lighthouse.jpg",
+      h: 0.64
+    },
+    {
+      name: "Bitoon White Sand Beach",
+      description: "Body text placeholder — details to follow once supplied.",
+      location: "Liloan, Southern Leyte",
+      image: "assets/images/map/Bitoon_White_Sand_Beach.jpg",
+      h: 0.88
+    },
+    {
+      name: "The Holy Cross of Mt. Carmel Chapel",
+      description: "Body text placeholder — details to follow once supplied.",
+      location: "Liloan, Southern Leyte",
+      image: "assets/images/map/The_Holy_Cross_of_Mt_Carmen_Chapel.jpg",
+      h: 0.46
+    }
+  ];
+
+  var track = document.getElementById('waveTrack');
+
+  MUST_VISIT_SPOTS.forEach(function (spot, i) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'wave-item';
+    btn.style.setProperty('--wave-h', spot.h);
+    btn.style.setProperty('--wave-delay', (i * 0.35) + 's');
+
+    var img = document.createElement('img');
+    img.src = spot.image;
+    img.alt = spot.name;
+    img.loading = 'lazy';
+    btn.appendChild(img);
+
+    var caption = document.createElement('span');
+    caption.className = 'wave-caption';
+    caption.innerHTML =
+      '<strong>' + spot.name + '</strong>' +
+      '<span class="wave-desc">' + spot.description + '</span>' +
+      '<span class="wave-location">\uD83D\uDCCD ' + spot.location + '</span>';
+    btn.appendChild(caption);
+
+    function activate() {
+      track.querySelectorAll('.wave-item').forEach(function (el) { el.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      track.classList.add('has-active');
+    }
+    function release() {
+      btn.classList.remove('is-active');
+      if (!track.querySelector('.wave-item.is-active')) {
+        track.classList.remove('has-active');
+      }
+    }
+
+    btn.addEventListener('mouseenter', activate);
+    btn.addEventListener('mouseleave', release);
+    btn.addEventListener('focus', activate);
+    btn.addEventListener('blur', release);
+    // Tap on touch devices: toggle, since there's no hover to fall back on.
+    btn.addEventListener('click', function () {
+      if (btn.classList.contains('is-active')) { release(); } else { activate(); }
+    });
+
+    track.appendChild(btn);
+  });
+})();
+</script>
 
 <!-- ============================= FOOTER ============================= -->
 <footer class="site-footer">
