@@ -340,6 +340,16 @@ section + section { border-top: 1px solid var(--line); }
   transform: translate(-50%, -100%) scale(1.2);
 }
 
+/* The browser's own default focus outline on an <area> is a thin
+   dark line, which disappears when it lands on top of our solid
+   black pin icon. Override it with a color that stays visible no
+   matter what it's sitting on — this is what shows when you Tab
+   through the map. */
+#liloan-map area:focus {
+  outline: 3px solid #ff3b30;
+  outline-offset: 1px;
+}
+
 /* Floating hover card: follows the cursor, shows the spot's
    photo with its name printed directly on the image (bottom
    caption bar) instead of a plain text bubble. */
