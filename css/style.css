@@ -584,8 +584,7 @@ table.population-table {
 }
 .contact-form label { font-size: 0.82rem; color: var(--muted); display: block; margin-bottom: 4px; }
 pre.office-hours {
-  background: var(--panel);
-  padding: 16px;
+  padding: 0px;
   font-size: 0.85rem;
   font-family: "SFMono-Regular", Consolas, monospace;
   overflow-x: auto;

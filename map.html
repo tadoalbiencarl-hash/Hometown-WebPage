@@ -35,17 +35,6 @@
 </section>
 
 <!-- ============================= INTERACTIVE HOMETOWN IMAGE MAP ============================= -->
-<!--
-Coordinates below are measured against this image's own native pixel size
-(assets/images/map/hometown_map.jpg, 1024×796). If this file is ever
-replaced with a differently-sized image, these coords must be rescaled
-proportionally — they do not carry over automatically between image sizes.
-
-Coordinates were re-derived by comparing this clean map against a second,
-manually-annotated reference image (different pixel size) that marked the
-five real-world locations, then scaling those marker positions into this
-image's coordinate space.
--->
 <section id="hometown-map">
 <div class="wrap">
 <div class="section-head text-center" style="margin: 0 auto 32px;">
@@ -57,11 +46,6 @@ image's coordinate space.
      alt="Hometown map of Liloan with five marked tourist spots"
      width="1024" height="796">
 
-<!-- Location-pin markers — purely visual, clicks pass through (pointer-events:none)
-     to the invisible <area> hotspots on the image itself, which do the real work.
-     Percentage positions are resolution-independent. JS below toggles ".is-active"
-     on the matching pin whenever its <area> is hovered, so the pin "lifts" as a
-     visual confirmation of which spot the cursor is over. -->
 <span class="map-pin" style="left:37.70%; top:43.78%;" aria-hidden="true"></span>
 <span class="map-pin" style="left:42.87%; top:28.02%;" aria-hidden="true"></span>
 <span class="map-pin" style="left:41.02%; top:45.33%;" aria-hidden="true"></span>
