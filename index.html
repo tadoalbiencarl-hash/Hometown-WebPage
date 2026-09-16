@@ -19,7 +19,6 @@
       <span></span><span></span><span></span>
     </button>
 
-    <!-- Bookmarks: in-page anchors on the home page itself -->
     <nav class="main-nav" id="mainNav">
       <a href="index.html" aria-current="page" title="Home" target="_self">Home</a>
       <a href="map.html" title="See the tourist spots on the map">Spots</a>
@@ -30,8 +29,6 @@
 </header>
 
 <!-- ============================= HERO ============================= -->
-<!-- Hero photo is a placeholder. Replace assets/images/hero/hero_liloan_view.jpg
-     with the real photograph; keep the same filename or update the src below. -->
 <section class="hero" style="padding:0;">
   <picture>
     <source media="(max-width: 680px)" srcset="assets/images/hero/hero_liloan_view.jpg">
@@ -45,8 +42,7 @@
 </section>
 
 <!-- ============================= GIF BANNER ============================= -->
-<!-- Animated GIF placeholder, required by the assignment. Replace with a real
-     motion clip or GIF of Liloan; keep the same filename or update the src below. -->
+
 <section id="gif-banner" style="padding: 24px 0; display:flex; justify-content:center;">
   <img src="assets/GIF/gif-1.gif"
        alt="Animated placeholder — replace with a real motion clip or GIF of Liloan"
@@ -57,9 +53,10 @@
 <!-- ============================= DISCOVER LILOAN ============================= -->
 <section id="discover">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Discover Liloan</h2>
-    </div>
+   <div class="section-head">
+<h2>Discover Liloan</h2>
+<p>Beaches, hills, and everyday corners — or jump straight to the <a href="map.html">interactive map</a> to explore by location.</p>
+</div>
 
     <div class="discover-grid">
 
@@ -138,8 +135,7 @@
           <img src="assets/images/experience/lilowawa_3.jpg" alt="Lilowawa experience — photo 3" width="1000" height="750">
         </div>
         <h3>Lilowawa</h3>
-        <p>Known locally as Lilowawa, this part of Liloan reflects the town's close connection to the sea and the waters surrounding Panaon Island. It is a place where the beauty of the coastline, local stories, and everyday life come together.</p>
-
+<p>Known locally as Lilowawa, this part of Liloan reflects the town's <em>close connection to the sea</em> and the waters surrounding Panaon Island.
       </div>
 
       <div class="experience-card">
@@ -149,7 +145,6 @@
         </div>
         <h3>Livelihood</h3>
         <p>Fishing and farming remain an important part of everyday life in Liloan. Along the coast, local fisherfolk depend on the sea for their families and communities, while farmers work the land to produce crops and support the local economy. These livelihoods reflect the hard work, resilience, and close connection to nature that shape life in Liloan.</p>
-
       </div>
 
     </div>
@@ -215,7 +210,6 @@
           Philippines
         </address>
         <p class="flag-credit">
-          <!-- Image-as-link + absolute image URL, both assignment requirements -->
           <a href="https://en.wikipedia.org/wiki/Philippines" target="_blank" title="About the Philippines">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of the Philippines" width="16" height="11">
           </a>
@@ -257,7 +251,6 @@
 </footer>
 
 <script>
-  // Mobile nav toggle
   var navToggle = document.getElementById('navToggle');
   var mainNav = document.getElementById('mainNav');
   navToggle.addEventListener('click', function () {
@@ -265,9 +258,6 @@
     navToggle.setAttribute('aria-expanded', open);
   });
 
-  // Independent crossfade galleries: each [data-gallery] cycles its own <img> set
-  // and, if it has .gallery-dots, builds click-to-jump dots. Each instance keeps
-  // its own state, so Beaches/Landscapes/Local Places never share a timer.
   document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
     var images = gallery.querySelectorAll('img');
     var dotsWrap = gallery.parentElement.querySelector('[data-dots]');

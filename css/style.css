@@ -568,26 +568,42 @@ table.population-table {
 }
 .population-table th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+/* Contact Us — horizontal layout */
+.contact-grid--horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: flex-start;
 }
-.contact-form { display: grid; gap: 14px; }
-.contact-form input, .contact-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+
+.contact-grid--horizontal .contact-col {
+  flex: 1 1 220px; /* each column grows/shrinks, wraps below ~220px */
+}
+
+.contact-grid--horizontal .contact-col h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.contact-grid--horizontal address {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.contact-grid--horizontal .office-hours {
   font-family: inherit;
-  font-size: 0.9rem;
+  white-space: pre-line;
+  margin: 0;
 }
-.contact-form label { font-size: 0.82rem; color: var(--muted); display: block; margin-bottom: 4px; }
-pre.office-hours {
-  padding: 0px;
-  font-size: 0.85rem;
-  font-family: "SFMono-Regular", Consolas, monospace;
-  overflow-x: auto;
+
+/* Stack back to vertical on small screens */
+@media (max-width: 600px) {
+  .contact-grid--horizontal {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 .bdo-demo { font-size: 0.78rem; color: var(--muted); display: flex; gap: 18px; margin-top: 10px; }
 
