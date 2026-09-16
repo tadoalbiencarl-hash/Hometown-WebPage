@@ -25,19 +25,17 @@
 </header>
 
 <!-- ============================= PAGE INTRO ============================= -->
-<section>
+<section class="page-hero">
 <div class="wrap">
-<div class="section-head text-center" style="margin: 0 auto 8px;">
 <h1>This Is the Map</h1>
-<p>Hover a marker on the hometown map below and its name appears; click it to jump straight to that spot's details further down the page.</p>
-</div>
+<p>Hover a marker on the hometown map and its name appears. Click it to jump straight to that spot's details further down the page.</p>
 </div>
 </section>
 
 <!-- ============================= INTERACTIVE HOMETOWN IMAGE MAP ============================= -->
 <section id="hometown-map">
 <div class="wrap">
-<div class="section-head text-center" style="margin: 0 auto 32px;">
+<div class="section-head text-center">
 <h2>Interactive Hometown Map</h2>
 </div>
 
@@ -46,11 +44,11 @@
      alt="Hometown map of Liloan with five marked tourist spots"
      width="1024" height="796">
 
-<span class="map-pin" style="left:37.70%; top:43.78%;" aria-hidden="true"></span>
-<span class="map-pin" style="left:42.87%; top:28.02%;" aria-hidden="true"></span>
-<span class="map-pin" style="left:41.02%; top:45.33%;" aria-hidden="true"></span>
-<span class="map-pin" style="left:39.36%; top:37.81%;" aria-hidden="true"></span>
-<span class="map-pin" style="left:79.79%; top:76.01%;" aria-hidden="true"></span>
+<span class="map-pin pin-1" style="left:37.70%; top:43.78%;" aria-hidden="true"></span>
+<span class="map-pin pin-2" style="left:42.87%; top:28.02%;" aria-hidden="true"></span>
+<span class="map-pin pin-3" style="left:41.02%; top:45.33%;" aria-hidden="true"></span>
+<span class="map-pin pin-4" style="left:39.36%; top:37.81%;" aria-hidden="true"></span>
+<span class="map-pin pin-5" style="left:79.79%; top:76.01%;" aria-hidden="true"></span>
 
 <map name="liloan-map" id="liloan-map">
 <!-- rect: Liloan Baywalk -->
@@ -76,7 +74,7 @@
 </map>
 </div>
 
-<p class="map-hint" style="font-style: italic; text-align: center;">Hover a pin to see the spot's name and photo. Click it to jump to the full details below.</p></div>
+<p class="map-hint">Hover a pin to see the spot's name and photo. Click it to jump to the full details below.</p></div>
 </section>
 
 <!-- ============================= TOURIST SPOTS (bookmarked from the map) ============================= -->
@@ -87,7 +85,7 @@
 <p>Each spot below corresponds to one marker on the map above.</p>
 </div>
 
-<div class="spot-row" id="spot-baywalk">
+<div class="spot-row accent-coral" id="spot-baywalk">
 <div>
 <h3>1. Liloan Baywalk</h3>
 <p>Sits right along the Poblacion shoreline, next to the AH26 coastal highway — the natural gathering spot along the water, a short walk from the town center.</p>
@@ -102,7 +100,7 @@
 </div>
 </div>
 
-<div class="spot-row" id="spot-molopolo">
+<div class="spot-row accent-aqua" id="spot-molopolo">
 <div class="spot-photo">
 <img src="assets/images/map/molopolo.jpg" alt="Molopolo Beach Resort" width="1000" height="750">
 </div>
@@ -117,7 +115,7 @@
 </div>
 </div>
 
-<div class="spot-row" id="spot-fatima-hills">
+<div class="spot-row accent-teal" id="spot-fatima-hills">
 <div>
 <h3>3. Fatima Hills</h3>
 <p>Rises just behind Poblacion, close enough to the town center to reach on foot or a short tricycle ride.</p>
@@ -132,7 +130,7 @@
 </div>
 </div>
 
-<div class="spot-row" id="spot-tagbak">
+<div class="spot-row accent-sage" id="spot-tagbak">
 <div class="spot-photo">
 <img src="assets/images/map/tagbak_marine_park.jpg" alt="Tagbak Marine Park" width="1000" height="750">
 </div>
@@ -147,7 +145,7 @@
 </div>
 </div>
 
-<div class="spot-row" id="spot-punta-rossette">
+<div class="spot-row accent-gold" id="spot-punta-rossette">
 <div>
 <h3>5. Punta Rossette Park</h3>
 <p>Tucked into the coastline near Barangay Pres. Quezon, on the eastern side of town facing Dinagat Island.</p>

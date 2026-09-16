@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Page title: assignment requirement <title> -->
 <title>Liloan, Southern Leyte — My Hometown</title>
-<link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -29,25 +29,26 @@
 </header>
 
 <!-- ============================= HERO ============================= -->
-<section class="hero" style="padding:0;">
+<section class="hero">
   <picture>
     <source media="(max-width: 680px)" srcset="assets/images/hero/hero_liloan_view.jpg">
     <img src="assets/images/hero/hero_liloan_view.jpg"
-         alt="Placeholder hero photograph — to be replaced with a view of Liloan featuring the Municipal Hall"
+         alt="View across Liloan toward the Municipal Hall at sunrise"
          width="1600" height="1000">
   </picture>
   <div class="hero-copy">
-    <h1>LILOAN<br>SOUTHERN LEYTE</h1>
+    <div class="wrap">
+      <h1>LILOAN<br>SOUTHERN LEYTE</h1>
+    </div>
   </div>
 </section>
 
 <!-- ============================= GIF BANNER ============================= -->
 
-<section id="gif-banner" style="padding: 24px 0; display:flex; justify-content:center;">
-  <img src="assets/GIF/gif-1.gif"
-       alt="Animated placeholder — replace with a real motion clip or GIF of Liloan"
-       width="164" height="96"
-       style="display:block; width:100%; max-width:200px; height:auto; object-fit:contain;">
+<section id="gif-banner">
+  <div class="wrap gif-wrap">
+    <img src="assets/GIF/gif-1.gif" alt="Short animated clip of Liloan" width="164" height="96">
+  </div>
 </section>
 
 <!-- ============================= DISCOVER LILOAN ============================= -->
@@ -55,13 +56,13 @@
   <div class="wrap">
    <div class="section-head">
 <h2>Discover Liloan</h2>
-<p>Beaches, hills, and everyday corners — or jump straight to the <a href="map.html" style="color:aqua">interactive map</a> to explore by location.</p>
+<p>Beaches, hills, and everyday corners — or jump straight to the <a href="map.html">interactive map</a> to explore by location.</p>
 </div>
 
     <div class="discover-grid">
 
       <!-- Beaches gallery -->
-      <div class="gallery" data-gallery data-autoplay="4200">
+      <div class="gallery accent-aqua" data-gallery data-autoplay="4200">
         <div class="gallery-frame">
           <img src="assets/images/discover/beaches/Beach_1.jpg" alt="Beaches in Liloan — photo 1" width="1200" height="1500" class="is-active">
           <img src="assets/images/discover/beaches/Beach_2.jpg" alt="Beaches in Liloan — photo 2" width="1200" height="1500">
@@ -74,7 +75,7 @@
       </div>
 
       <!-- Landscapes gallery -->
-      <div class="gallery" data-gallery data-autoplay="4800">
+      <div class="gallery accent-sage" data-gallery data-autoplay="4800">
         <div class="gallery-frame">
           <img src="assets/images/discover/landscapes/Landscape_1.jpg" alt="Landscapes in Liloan — photo 1" width="1200" height="1500" class="is-active">
           <img src="assets/images/discover/landscapes/Landscape_2.jpg" alt="Landscapes in Liloan — photo 2" width="1200" height="1500" style="object-fit: cover; object-position: right center;">
@@ -87,7 +88,7 @@
       </div>
 
       <!-- Local Places gallery -->
-      <div class="gallery" data-gallery data-autoplay="5300">
+      <div class="gallery accent-coral" data-gallery data-autoplay="5300">
         <div class="gallery-frame">
           <img src="assets/images/discover/local/Local_Places_1.jpg" alt="Local places in Liloan — photo 1" width="1200" height="1500" class="is-active">
           <img src="assets/images/discover/local/Local_Places_2.jpg" alt="Local places in Liloan — photo 2" width="1200" height="1500">
@@ -128,17 +129,17 @@
     </div>
     <div class="experience-grid">
 
-      <div class="experience-card">
+      <div class="experience-card accent-aqua">
         <div class="experience-frame" data-gallery data-autoplay="3600">
           <img src="assets/images/experience/lilowawa_1.jpg" alt="Lilowawa experience — photo 1" width="1000" height="750" class="is-active">
           <img src="assets/images/experience/lilowawa_2.jpg" alt="Lilowawa experience — photo 2" width="1000" height="750">
           <img src="assets/images/experience/lilowawa_3.jpg" alt="Lilowawa experience — photo 3" width="1000" height="750">
         </div>
         <h3>Lilowawa</h3>
-<p>Known locally as Lilowawa, this part of Liloan reflects the town's <em>close connection to the sea</em> and the waters surrounding Panaon Island.
+<p>Known locally as Lilowawa, this part of Liloan reflects the town's <em>close connection to the sea</em> and the waters surrounding Panaon Island.</p>
       </div>
 
-      <div class="experience-card">
+      <div class="experience-card accent-gold">
         <div class="experience-frame" data-gallery data-autoplay="4100">
           <img src="assets/images/experience/livelihood_1.jpg" alt="Livelihood in Liloan — photo 1" width="1000" height="750" class="is-active">
           <img src="assets/images/experience/livelihood_2.jpg" alt="Livelihood in Liloan — photo 2" width="1000" height="750">
@@ -160,7 +161,7 @@
     </div>
     <div class="voices-grid">
 
-      <div class="voice-card">
+      <div class="voice-card accent-coral">
         <blockquote>Home is the shoreline you can still recognize with your eyes closed.</blockquote>
         <div class="voice-meta">
           <span class="dot" aria-hidden="true"></span>
@@ -168,7 +169,7 @@
         </div>
       </div>
 
-      <div class="voice-card">
+      <div class="voice-card accent-aqua">
         <blockquote>What holds the town together isn't the map — it's the people who keep showing up for each other.</blockquote>
         <div class="voice-meta">
           <span class="dot" aria-hidden="true"></span>
@@ -176,7 +177,7 @@
         </div>
       </div>
 
-      <div class="voice-card">
+      <div class="voice-card accent-sage">
         <blockquote>Small towns rarely get remembered on their own terms. Liloan is worth remembering on its own.</blockquote>
         <div class="voice-meta">
           <span class="dot" aria-hidden="true"></span>
@@ -260,26 +261,12 @@
 
   document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
     var images = gallery.querySelectorAll('img');
-    var dotsWrap = gallery.parentElement.querySelector('[data-dots]');
     var index = 0;
-
-    if (dotsWrap) {
-      images.forEach(function (img, i) {
-        var dot = document.createElement('button');
-        dot.type = 'button';
-        dot.setAttribute('aria-label', 'Show photo ' + (i + 1));
-        if (i === 0) dot.classList.add('is-active');
-        dot.addEventListener('click', function () { show(i); });
-        dotsWrap.appendChild(dot);
-      });
-    }
 
     function show(i) {
       images[index].classList.remove('is-active');
-      if (dotsWrap) dotsWrap.children[index].classList.remove('is-active');
       index = i;
       images[index].classList.add('is-active');
-      if (dotsWrap) dotsWrap.children[index].classList.add('is-active');
     }
 
     var delay = parseInt(gallery.getAttribute('data-autoplay'), 10) || 4000;
